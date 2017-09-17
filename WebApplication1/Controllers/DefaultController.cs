@@ -14,20 +14,21 @@ namespace WebApplication1.Controllers
         // GET: Default
         public ActionResult Index()
         {
-            bool f = UserService.CheckLogin("你好", "123");
-            TestHelper.Test();
-            return Content(f.ToString());
+            // bool f = UserService.CheckLogin("你好", "123");
+            // TestHelper.Test();
+            // return Content(f.ToString());
+            return Content("");
         }
 
-        [HttpGet]
+        [HttpPost]
         public  ActionResult Test()
         {
             Dog dog = new Dog() { BirthDate=DateTime.Now,Id=1,Name="LMH"};
-            return Json(dog);
+            return  new JsonNetResult() { Data=dog};
 
 
         }
-
+        [HttpGet]
         public ActionResult TestJson()
         {
             return View();
