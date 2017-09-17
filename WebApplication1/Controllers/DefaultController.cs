@@ -18,5 +18,19 @@ namespace WebApplication1.Controllers
             TestHelper.Test();
             return Content(f.ToString());
         }
+
+        [HttpGet]
+        public  ActionResult Test()
+        {
+            Dog dog = new Dog() { BirthDate=DateTime.Now,Id=1,Name="LMH"};
+            return Json(dog);
+
+
+        }
+
+        public ActionResult TestJson()
+        {
+            return View();
+        }
     }
 }
