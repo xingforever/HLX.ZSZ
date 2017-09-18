@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLX.ZSZ.Common", "HLX.ZSZ.Common\HLX.ZSZ.Common.csproj", "{008018DA-4E43-4540-A9DF-06C4313696D5}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestIservice", "TestIservice\TestIservice.csproj", "{A3B580FE-7FC7-4706-A99B-02DEFD4C51FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestService", "TestService\TestService.csproj", "{A8DCD77F-8D66-4670-9B77-6EDDD8963F02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLX.ZSZ.CommonMVC", "HLX.ZSZ.CommonMVC\HLX.ZSZ.CommonMVC.csproj", "{43B86BD6-D2CB-4C59-A736-D99F2DF05BF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{A8DCD77F-8D66-4670-9B77-6EDDD8963F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8DCD77F-8D66-4670-9B77-6EDDD8963F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8DCD77F-8D66-4670-9B77-6EDDD8963F02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B86BD6-D2CB-4C59-A736-D99F2DF05BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B86BD6-D2CB-4C59-A736-D99F2DF05BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B86BD6-D2CB-4C59-A736-D99F2DF05BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B86BD6-D2CB-4C59-A736-D99F2DF05BF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +67,8 @@ Global
 		{9B14C7AB-5090-48AA-AB26-5D57D3EF6DEC} = {38EFC7DC-D39B-4BAF-B382-885B820B9272}
 		{A3B580FE-7FC7-4706-A99B-02DEFD4C51FB} = {38EFC7DC-D39B-4BAF-B382-885B820B9272}
 		{A8DCD77F-8D66-4670-9B77-6EDDD8963F02} = {38EFC7DC-D39B-4BAF-B382-885B820B9272}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {430F4660-3808-4E07-B9BD-5AC948D67C19}
 	EndGlobalSection
 EndGlobal

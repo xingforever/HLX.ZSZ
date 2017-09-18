@@ -2,7 +2,7 @@
 using CaptchaGen;
 using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
-using HLX.ZSZ.Common;
+using HLX.ZSZ.CommonMVC;
 using log4net;
 using MyBLLImpl;
 using MyIBll;
@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Reflection;
 using System.Text;
@@ -43,7 +44,10 @@ namespace ZSZTest
             //    Log4NET();
             //}
 
-            AutoFac();
+            //AutoFac();
+
+
+            SendMsg2();
             Console.WriteLine("ok");
             Console.ReadKey();
 
@@ -170,6 +174,38 @@ namespace ZSZTest
             dogbll.Bark();
 
         }
+        //模拟发短信 利用如鹏网模拟短信平台 http://sms.rupeng.cn/doc.html
+        //http://sms.rupeng.cn/Index.aspx
+        static void SendMsg()
+        {
+            string userName = "hlxForNext";
+            string appKey = "4643878b073baa968bd870";
+            string templateId = "596";
+            string code = "12356";
+            string phoneNum = "15779708281";
 
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.UTF8;
+            string url=  wc.DownloadString("http://sms.rupeng.cn/SendSms.ashx?userName="+Uri.EscapeDataString(userName)+"&appKey="
+                +Uri.EscapeDataString(appKey)+ "&templateId="+ templateId+"&code="+Uri.EscapeDataString(code)
+                +"&phoneNum="+phoneNum);
+        
+            string resp = wc.DownloadString(url);
+            Console.WriteLine(resp);
+        }
+
+        static  void SendMsg2()
+        {
+            string userName = "hlxForNext";
+            string appKey = "4643878b073baa968bd870";
+            string templateId = "596";
+            string code = "12356";
+            string phoneNum = "15779708281";
+            RuPengSMSSender  sender= new RuPengSMSSender();
+            sender.UserName = userName;
+            sender.AppKey = appKey;
+            var result = sender.SendSMS(templateId, code, phoneNum);
+            Console.WriteLine("返回码："+result.code+"消息"+result.msg);
+        }
     }
 }

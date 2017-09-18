@@ -118,6 +118,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\TestJson.cshtml" />
+    <Content Include="Views\Default\Page.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace HLX.ZSZ.CommonMVC
 {
     /// <summary>
-    ///页码管理
+    ///页码管理  有一个MVCPage
     /// </summary>
-    class PageManager
+  public   class PageManager
     {
        
             /// <summary>

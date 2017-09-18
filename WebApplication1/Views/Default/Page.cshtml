@@ -1,0 +1,27 @@
+﻿@using HLX.ZSZ.CommonMVC
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Page</title>
+</head>
+<body>
+    <div> 
+    </div>
+    @{ 
+        PageManager page = new PageManager ();
+        page.CurrentPageClassName = "active";
+        page.MaxPagerCount = 10;
+        page.PageIndex = 3;
+        page.PageSize = 50;
+        page.TotalCount = 809;
+        page.UrlPattern = "/Data?p={pn}";
+    }
+    @Html.Raw(page.GetPagerHtml());
+</body>
+</html>

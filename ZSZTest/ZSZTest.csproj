@@ -78,6 +78,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HLX.ZSZ.CommonMVC\HLX.ZSZ.CommonMVC.csproj">
+      <Project>{43b86bd6-d2cb-4c59-a736-d99f2df05bf7}</Project>
+      <Name>HLX.ZSZ.CommonMVC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HLX.ZSZ.Common\HLX.ZSZ.Common.csproj">
       <Project>{008018da-4e43-4540-a9df-06c4313696d5}</Project>
       <Name>HLX.ZSZ.Common</Name>
