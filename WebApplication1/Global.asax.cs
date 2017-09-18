@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using HLX.ZSZ.CommonMVC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,15 @@ namespace WebApplication1
     {
         protected void Application_Start()
         {
+            //偷天换日
+            GlobalFilters.Filters.Add(new JsonNetActionFilter());
+
+
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            ModelBinders.Binders.Add(typeof(string), new TrimToDBCModelBinder());
+
             //var builder = new ContainerBuilder();
 
             ////using Autofac.Integration.Mvc;

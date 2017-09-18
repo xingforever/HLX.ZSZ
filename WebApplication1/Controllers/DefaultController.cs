@@ -24,8 +24,9 @@ namespace WebApplication1.Controllers
         public  ActionResult Test()
         {
             Dog dog = new Dog() { BirthDate=DateTime.Now,Id=1,Name="LMH"};
-            return  new JsonNetResult() { Data=dog};
-
+            //return  new JsonNetResult() { Data=dog};
+            //使用JsonNetResult替换JsonResult
+            return Json(dog);
 
         }
         [HttpGet]

@@ -108,6 +108,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="JsonNetActionFilter.cs" />
     <Compile Include="JsonNetResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestHelper.cs" />
@@ -129,6 +130,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HLX.ZSZ.CommonMVC\HLX.ZSZ.CommonMVC.csproj">
+      <Project>{43b86bd6-d2cb-4c59-a736-d99f2df05bf7}</Project>
+      <Name>HLX.ZSZ.CommonMVC</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TestIservice\TestIservice.csproj">
       <Project>{a3b580fe-7fc7-4706-a99b-02defd4c51fb}</Project>
       <Name>TestIservice</Name>
