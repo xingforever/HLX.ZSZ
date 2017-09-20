@@ -99,6 +99,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="template.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
