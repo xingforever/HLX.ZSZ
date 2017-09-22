@@ -19,6 +19,7 @@ using System.Net.Mail;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using ZSZ.Service;
 
 namespace ZSZTest
 {
@@ -47,8 +48,9 @@ namespace ZSZTest
             //AutoFac();
 
 
-            SendMsg2();
-            Console.WriteLine("ok");
+            //SendMsg2();
+            //Console.WriteLine("ok");
+            CreateDataBase();
             Console.ReadKey();
 
 
@@ -193,7 +195,7 @@ namespace ZSZTest
             string resp = wc.DownloadString(url);
             Console.WriteLine(resp);
         }
-
+        //发送短信2
         static  void SendMsg2()
         {
             string userName = "hlxForNext";
@@ -207,5 +209,18 @@ namespace ZSZTest
             var result = sender.SendSMS(templateId, code, phoneNum);
             Console.WriteLine("返回码："+result.code+"消息"+result.msg);
         }
+
+        static void CreateDataBase()
+        {
+            using (ZSZDbContext ctx=new ZSZDbContext ())
+            {
+                ctx.Database.Delete();
+                ctx.Database.Create();
+            }
+            Console.WriteLine("数据连接,创建成功");
+
+
+        }
+
     }
 }
