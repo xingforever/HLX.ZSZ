@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
@@ -12,10 +13,14 @@ namespace ZSZ.Service
 {
    public  class ZSZDbContext : DbContext
     {
+        private static ILog log = LogManager.GetLogger(typeof(ZSZDbContext));
         public ZSZDbContext():base("name=connstr")
             //name=conn1表示使用连接字符串中名字为conn1的去连接数据库
         {
-            Database.SetInitializer<ZSZDbContext>(null);           
+            Database.SetInitializer<ZSZDbContext>(null);
+            this.Database.Log = (sql) => {
+                log.DebugFormat("EF执行SQL：{0}", sql);
+            };
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -44,6 +44,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.5\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -94,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\ZSZExceptionFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -113,6 +123,24 @@
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HLX.ZSZ.CommonMVC\HLX.ZSZ.CommonMVC.csproj">
+      <Project>{43b86bd6-d2cb-4c59-a736-d99f2df05bf7}</Project>
+      <Name>HLX.ZSZ.CommonMVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HLX.ZSZ.Common\HLX.ZSZ.Common.csproj">
+      <Project>{008018da-4e43-4540-a9df-06c4313696d5}</Project>
+      <Name>HLX.ZSZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HLX.ZSZ.IServices\HLX.ZSZ.IServices.csproj">
+      <Project>{9b724f6a-c56b-49a3-9619-1e5c00d7a286}</Project>
+      <Name>HLX.ZSZ.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HLX.ZSZ.Services\HLX.ZSZ.Services.csproj">
+      <Project>{27728a21-e382-4c47-8032-b6ee8985de0a}</Project>
+      <Name>HLX.ZSZ.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
