@@ -83,6 +83,7 @@
     <Compile Include="ModelConfig\SettingConfig.cs" />
     <Compile Include="ModelConfig\UserConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingService.cs" />
     <Compile Include="ZSZDbContext.cs" />
   </ItemGroup>
   <ItemGroup>

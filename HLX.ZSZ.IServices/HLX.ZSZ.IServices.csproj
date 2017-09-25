@@ -43,7 +43,14 @@
   <ItemGroup>
     <Compile Include="ICityService.cs" />
     <Compile Include="IServiceSupport.cs" />
+    <Compile Include="ISettingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HLX.ZSZ.DTO\HLX.ZSZ.DTO.csproj">
+      <Project>{6cd8c16e-4d3f-443e-94f5-0067ba49a4d9}</Project>
+      <Name>HLX.ZSZ.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
