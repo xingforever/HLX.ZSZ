@@ -93,9 +93,9 @@
       <Project>{008018da-4e43-4540-a9df-06c4313696d5}</Project>
       <Name>HLX.ZSZ.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\HLX.ZSZ.Services\HLX.ZSZ.Services.csproj">
+    <ProjectReference Include="..\HLX.ZSZ.Services\ZSZ.Service.csproj">
       <Project>{27728a21-e382-4c47-8032-b6ee8985de0a}</Project>
-      <Name>HLX.ZSZ.Services</Name>
+      <Name>ZSZ.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyBLLImpl\MyBLLImpl.csproj">
       <Project>{de298e5a-ba86-4bc7-9bd5-a15fa065f28c}</Project>

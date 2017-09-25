@@ -1,11 +1,12 @@
-﻿using System;
+﻿using HLX.ZSZ.IServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ZSZ.Service.Entities;
 
-namespace ZSZ.Service
+namespace  ZSZ.Service
 {
     //这个类叫CommonService
     class BaseService<T> where T : BaseEntity
