@@ -9,7 +9,7 @@ using ZSZ.Service.Entities;
 namespace  ZSZ.Service
 {
     //这个类叫CommonService
-    class BaseService<T> where T : BaseEntity
+    public   class BaseService<T> where T : BaseEntity
     {
         private ZSZDbContext ctx;
         public BaseService(ZSZDbContext ctx)
