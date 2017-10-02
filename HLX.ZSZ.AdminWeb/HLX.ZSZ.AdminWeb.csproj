@@ -1335,6 +1335,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ZSZExceptionFilter.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\PermissionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1436,6 +1437,9 @@
     <Content Include="skin\orange\Thumbs.db" />
     <Content Include="skin\red\Thumbs.db" />
     <Content Include="skin\yellow\Thumbs.db" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Permission\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1460,6 +1464,10 @@
     <ProjectReference Include="..\HLX.ZSZ.Common\HLX.ZSZ.Common.csproj">
       <Project>{008018da-4e43-4540-a9df-06c4313696d5}</Project>
       <Name>HLX.ZSZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HLX.ZSZ.DTO\HLX.ZSZ.DTO.csproj">
+      <Project>{6cd8c16e-4d3f-443e-94f5-0067ba49a4d9}</Project>
+      <Name>HLX.ZSZ.DTO</Name>
     </ProjectReference>
     <ProjectReference Include="..\HLX.ZSZ.IServices\HLX.ZSZ.IServices.csproj">
       <Project>{9b724f6a-c56b-49a3-9619-1e5c00d7a286}</Project>
