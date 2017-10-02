@@ -203,7 +203,7 @@ namespace ZSZTest
             string templateId = "596";
             string code = "12356";
             string phoneNum = "15779708281";
-            RuPengSMSSender  sender= new RuPengSMSSender();
+            HLXSMSSender  sender= new HLXSMSSender();
             sender.UserName = userName;
             sender.AppKey = appKey;
             var result = sender.SendSMS(templateId, code, phoneNum);

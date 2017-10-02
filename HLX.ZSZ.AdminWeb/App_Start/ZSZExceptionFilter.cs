@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace HLX.ZSZ.AdminWeb.App_Start
+namespace HLX.ZSZ.AdminWeb
 {
     public class ZSZExceptionFilter : IExceptionFilter
     {

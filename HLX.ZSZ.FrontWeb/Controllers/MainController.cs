@@ -9,6 +9,7 @@ namespace HLX.ZSZ.FrontWeb.Controllers
 {
     public class MainController : Controller
     {
+
         public ICityService cityService { get; set; }
         // GET: Main
         public ActionResult Index()

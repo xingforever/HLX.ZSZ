@@ -22,6 +22,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
         {
             PermissionService.MarkDeleted(id);
             return Json(new AjaxResult { Status = "ok", Data = "", ErrorMsg = "" });
+            
         }
     }
 }

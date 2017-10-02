@@ -47,6 +47,7 @@ namespace HLX.ZSZ.FrontWebs
 
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            GlobalFilters.Filters.Add(new JsonNetActionFilter());
         }
     }
 }
