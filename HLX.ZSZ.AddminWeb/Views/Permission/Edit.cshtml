@@ -1,0 +1,54 @@
+﻿@model HLX.ZSZ.DTO.PermissionDTO
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" id="formAdd">
+    <input type="hidden" id ="id" value="@Model.Id"/>
+    
+    名称:<input type="text" name="name" id="name" value="@Model.Name" />
+    描述:<input type="text" id="description" value="@Model.Description" />
+
+    <input type="button" value="修改" id="btnSave" />
+</form>
+
+
+@section FooterScript{
+    <script>
+        var saveAjax = function () {
+            var id = $("#id").val();
+            var name = $("#name").val();
+            var description = $("#description").val();
+            $.ajax({
+                url: "/Permission/Edit",
+                type: "post",
+                data: {  id:id,name: name, description: description },
+                datatype: "json",
+                success: function (data) {
+                    if (data.status == "ok") {
+                        alert("ok");
+                        parent.location.reload();
+                    } else {
+                        alert("error");
+                    }
+                },
+                error: function () {
+                    alert("it's error")
+                }
+
+
+            });
+
+
+
+        }
+
+
+        $(function () {
+            $("#btnSave").click(saveAjax)
+        })
+
+    </script>
+
+}

@@ -1334,6 +1334,11 @@
     <Content Include="Views\Permission\List.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Permission\Add.cshtml" />
+    <Content Include="Views\Permission\Edit.cshtml" />
+    <Content Include="Views\Role\List.cshtml" />
+    <Content Include="Views\Role\Add.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1341,6 +1346,7 @@
     <Compile Include="Controllers\AjaxResult.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\PermissionController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1352,6 +1358,10 @@
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\PathFormater.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Models\PermissioAddNewModel.cs" />
+    <Compile Include="Models\RoleAddModel.cs" />
+    <Compile Include="Models\RoleEditGetModel.cs" />
+    <Compile Include="Models\RoleEditModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1434,7 +1444,9 @@
     <Content Include="lib\webuploader\0.1.5\README.md" />
     <Content Include="lib\zTree\v3\css\zTreeStyle\img\Thumbs.db" />
     <Content Include="lib\zTree\v3\README.md" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="skin\blue\Thumbs.db" />
     <Content Include="skin\default\Thumbs.db" />
     <Content Include="skin\green\Thumbs.db" />
@@ -1454,7 +1466,6 @@
     <Folder Include="lib\Highcharts\4.1.7\exporting-server\java\highcharts-export\highcharts-export-convert\target\surefire\" />
     <Folder Include="lib\Highcharts\4.1.7\exporting-server\java\highcharts-export\highcharts-export-web\target\generated-sources\annotations\" />
     <Folder Include="lib\Highcharts\4.1.7\exporting-server\java\highcharts-export\highcharts-export-web\target\surefire\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HLX.ZSZ.CommonMVC\HLX.ZSZ.CommonMVC.csproj">

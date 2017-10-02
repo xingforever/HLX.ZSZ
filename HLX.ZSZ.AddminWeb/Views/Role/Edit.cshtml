@@ -1,0 +1,58 @@
+﻿@model HLX.ZSZ.AddminWeb.Models.RoleEditGetModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" id="formAdd">
+    <input type="hidden" name="id" id="id" value="@Model.Role.Id" />
+    名称：<input type="text" name="name" id="name" value="@Model.Role.Name" />
+    <div class="row cl">
+        @foreach (var perm in Model.AllPerms)
+        {
+            <div class="col-xs-12 col-sm-3">
+                <input type="checkbox" checked="@Model.RolePerms.Select(p=>p.Id).Contains(perm.Id)" id="PermissionIds_@perm.Id" name="PermissionIds" value="@perm.Id" />
+                <label for="PermissionIds_@perm.Id">@perm.Description</label>
+            </div>
+        }
+    </div>
+    <input type="button" value="保存" id="btnSave" />
+</form>
+
+
+@section FooterScript{
+    <script>
+        var saveAjax = function () {
+            var formData = $("#formEdit").serializeArray();
+            $.ajax({
+                url: "/Role/Edit",
+                type: "post",
+                data: formData,
+                datatype: "json",
+                success: function (data) {
+                    if (data.status == "ok") {
+                        alert("ok");
+                        parent.location.reload();
+                    } else {
+                        alert("error");
+                    }
+                },
+                error: function () {
+                    alert("it's error")
+                }
+
+
+            });
+
+
+
+        }
+
+
+        $(function () {
+            $("#btnSave").click(saveAjax)
+        })
+
+    </script>
+
+}
