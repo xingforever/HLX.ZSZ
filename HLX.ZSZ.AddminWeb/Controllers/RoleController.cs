@@ -62,5 +62,15 @@ namespace HLX.ZSZ.AddminWeb.Controllers
             return Json(new AjaxResult { Status = "ok" });
         }
 
+        public ActionResult BatchDelete(long [] selectdIds)
+        {
+            foreach (var id in selectdIds)
+            {
+                roleService.MarkDeleted(id);
+            }
+            return Json(new AjaxResult { Status = "ok" });
+
+        }
+
     }
 }
