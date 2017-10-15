@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace HLX.ZSZ.AddminWeb.Models
+namespace HLX.ZSZ.AdminWeb.Models
 {
     public class RoleEditGetModel
     {

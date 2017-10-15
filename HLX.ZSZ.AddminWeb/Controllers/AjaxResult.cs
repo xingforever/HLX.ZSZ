@@ -1,4 +1,4 @@
-﻿namespace HLX.ZSZ.AddminWeb.Controllers
+﻿namespace HLX.ZSZ.AdminWeb.Controllers
 {
     internal class AjaxResult
     {

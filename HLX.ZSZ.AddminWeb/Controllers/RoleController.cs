@@ -1,4 +1,5 @@
-﻿using HLX.ZSZ.AddminWeb.Models;
+﻿using HLX.ZSZ.AdminWeb.Models;
+using HLX.ZSZ.CommonMVC;
 using HLX.ZSZ.IServices;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 
 
-namespace HLX.ZSZ.AddminWeb.Controllers
+namespace HLX.ZSZ.AdminWeb.Controllers
 {
     public class RoleController : Controller
     {
@@ -37,6 +38,11 @@ namespace HLX.ZSZ.AddminWeb.Controllers
         [HttpPost]
         public ActionResult Add(RoleAddModel model)
         {
+            //检查验证是否通过
+            if(!ModelState.IsValid)
+            {
+                return Json(new AjaxResult { Status = "error",ErrorMsg= MVCHelper.GetValidMsg(ModelState )});
+            }
           long roleId=  roleService.AddNew(model.Name);
             permisionService.AddPermIds(roleId, model.PermissionIds);
             return Json(new AjaxResult { Status = "ok" });

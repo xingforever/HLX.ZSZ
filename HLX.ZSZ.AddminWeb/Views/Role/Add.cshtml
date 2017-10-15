@@ -59,7 +59,12 @@
 
 
         $(function () {
-            $("#btnSave").click(saveAjax)
+            var validForm = $("#formAdd").Validform({ tiptype: 3 });
+            $("#btnSave").click(function () {
+                if (validForm.check(false)) {
+                    saveAjax();
+                }
+            });
         })
 
     </script>

@@ -1,4 +1,4 @@
-﻿using HLX.ZSZ.AddminWeb.Models;
+﻿using HLX.ZSZ.AdminWeb.Models;
 using HLX.ZSZ.IServices;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace HLX.ZSZ.AddminWeb.Controllers
+namespace HLX.ZSZ.AdminWeb.Controllers
 {
     public class PermissionController : Controller
     {

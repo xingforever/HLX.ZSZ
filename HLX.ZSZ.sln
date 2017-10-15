@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLX.ZSZ.FrontWebs", "HLX.ZS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceTest", "ServiceTest\ServiceTest.csproj", "{436ED02A-8AD3-4E3D-BAA8-504E86FC478E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLX.ZSZ.AddminWeb", "HLX.ZSZ.AddminWeb\HLX.ZSZ.AddminWeb.csproj", "{E67172D3-A086-4EFB-BA8C-E2D8BFD1C5D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HLX.ZSZ.AdminWeb", "HLX.ZSZ.AddminWeb\HLX.ZSZ.AdminWeb.csproj", "{E67172D3-A086-4EFB-BA8C-E2D8BFD1C5D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

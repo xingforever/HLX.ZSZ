@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="HLX.ZSZ.AddminWeb.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="HLX.ZSZ.AdminWeb.MvcApplication" Language="C#" %>

@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HLX.ZSZ.AddminWeb</RootNamespace>
-    <AssemblyName>HLX.ZSZ.AddminWeb</AssemblyName>
+    <RootNamespace>HLX.ZSZ.AdminWeb</RootNamespace>
+    <AssemblyName>HLX.ZSZ.AdminWeb</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -49,6 +49,9 @@
     </Reference>
     <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mvc5.4.0.1\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaGen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaGen.1.0.0\lib\net40\CaptchaGen.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
@@ -135,6 +138,7 @@
     <Content Include="images\loading.gif" />
     <Content Include="images\loading_072.gif" />
     <Content Include="images\logo.png" />
+    <Content Include="images\sorry.jpg" />
     <Content Include="images\sort_asc.png" />
     <Content Include="images\sort_both.png" />
     <Content Include="images\sort_desc.png" />
@@ -1341,6 +1345,7 @@
     <Content Include="Views\Role\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\CheckPermissionAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ZSZExceptionFilter.cs" />
     <Compile Include="Controllers\AjaxResult.cs" />
@@ -1358,6 +1363,12 @@
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\PathFormater.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Controllers\AdminUserController.cs" />
+    <Compile Include="Models\AdminUserAddModel.cs" />
+    <Compile Include="Models\AdminUserAddViewModel.cs" />
+    <Compile Include="Models\AdminUserEditModel.cs" />
+    <Compile Include="Models\AdminUserEditViewModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\PermissioAddNewModel.cs" />
     <Compile Include="Models\RoleAddModel.cs" />
     <Compile Include="Models\RoleEditGetModel.cs" />
@@ -1453,6 +1464,9 @@
     <Content Include="skin\orange\Thumbs.db" />
     <Content Include="skin\red\Thumbs.db" />
     <Content Include="skin\yellow\Thumbs.db" />
+    <Content Include="Views\AdminUser\List.cshtml" />
+    <Content Include="Views\AdminUser\Add.cshtml" />
+    <Content Include="Views\AdminUser\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
