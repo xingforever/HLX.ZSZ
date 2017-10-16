@@ -14,6 +14,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
 {
     public class AdminUserController : Controller
     {
+        //测试用户:1579708281   pwd :123123
         public IAdminUserService userService { get; set; }
         public ICityService cityService { get; set; }
         public IRoleService roleService { get; set; }

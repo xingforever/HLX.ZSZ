@@ -41,6 +41,7 @@ namespace ZSZ.Service
             using (ZSZDbContext ctx = new ZSZDbContext())
             {
                 BaseService<UserEntity> bs = new BaseService<UserEntity>(ctx);
+                var theuser = bs.GetAll().ToList();
                 var user = bs.GetAll().SingleOrDefault(u => u.PhoneNum == phoneNum);
                 if (user == null)
                 {

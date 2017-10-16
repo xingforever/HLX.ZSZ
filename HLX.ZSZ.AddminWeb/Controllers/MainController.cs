@@ -14,7 +14,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
     public class MainController : Controller
     {
 
-        public  IUserService userService { get; set; }
+        public IAdminUserService adminService { get; set; }
         // GET: Main
         public ActionResult Index()
         {
@@ -45,11 +45,11 @@ namespace HLX.ZSZ.AdminWeb.Controllers
                 return Json(new AjaxResult { Status = "error", ErrorMsg = "验证码错误" });
 
             }
-            bool result =userService.CheckLogin(model.PhoneNum, model.Password);
+            bool result =adminService.CheckLogin(model.PhoneNum, model.Password);
             if (result)
             {
                 //用户登录Id
-                Session["LoginUserId"] = userService.GetByPhoneNum(model.PhoneNum).Id;
+                Session["LoginUserId"] = adminService.GetByPhoneNum(model.PhoneNum).Id;
                 return Json(new AjaxResult { Status = "ok" });
             }
             else

@@ -1,4 +1,5 @@
-﻿using HLX.ZSZ.AdminWeb.Models;
+﻿using HLX.ZSZ.AdminWeb.App_Start;
+using HLX.ZSZ.AdminWeb.Models;
 using HLX.ZSZ.IServices;
 using System;
 using System.Collections.Generic;
@@ -13,18 +14,21 @@ namespace HLX.ZSZ.AdminWeb.Controllers
         // GET: Permission
         public IPermissionService PermissionService { get; set; }
         // GET: Permission
+        [CheckPermission("Permission.List")]
         public ActionResult List()
         {
             var perms = PermissionService.GetAll();
 
             return View(perms);
         }
+        [CheckPermission("Permission.Delete")]
         public ActionResult Delete2(long id)
         {
             PermissionService.MarkDeleted(id);
             return Json(new AjaxResult { Status = "ok", Data = "", ErrorMsg = "" });
 
         }
+        [CheckPermission("Permission.Delete")]
         public  ActionResult GetDelete(long id)
         {
 
@@ -32,12 +36,13 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             //return RedirectToAction("List");//删除之后刷新
             return RedirectToAction(nameof(List));
         }
+        [CheckPermission("Permission.Add")]
         [HttpGet]
         public ActionResult Add()
         {
             return View();
         }
-
+        [CheckPermission("Permission.Add")]
         [HttpPost]
         public  ActionResult Add(PermissioAddNewModel model)
         {
@@ -48,7 +53,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             return Json(new AjaxResult { Status = "ok" });
         }
 
-
+        [CheckPermission("Permission.Edit")]
         [HttpGet]
         public ActionResult Edit(long id) {
 
@@ -58,6 +63,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
 
 
         }
+        [CheckPermission("Permission.Edit")]
         [HttpPost]
         public ActionResult Edit()
         {

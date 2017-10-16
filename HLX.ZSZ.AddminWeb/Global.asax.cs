@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using HLX.ZSZ.AdminWeb.App_Start;
 using HLX.ZSZ.CommonMVC;
 using HLX.ZSZ.IServices;
 using System;
@@ -17,7 +18,7 @@ namespace HLX.ZSZ.AdminWeb
         protected void Application_Start()
         {
             log4net.Config.XmlConfigurator.Configure();
-            GlobalFilters.Filters.Add(new ZSZExceptionFilter());
+           
             ModelBinders.Binders.Add(typeof(string), new TrimToDBCModelBinder());
             ModelBinders.Binders.Add(typeof(int), new TrimToDBCModelBinder());
             ModelBinders.Binders.Add(typeof(long), new TrimToDBCModelBinder());
@@ -48,7 +49,10 @@ namespace HLX.ZSZ.AdminWeb
             AreaRegistration.RegisterAllAreas();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            GlobalFilters.Filters.Add(new JsonNetActionFilter());
+            //GlobalFilters.Filters.Add(new ZSZExceptionFilter());
+            //GlobalFilters.Filters.Add(new JsonNetActionFilter());
+            //GlobalFilters.Filters.Add(new ZSZAuthorizeFilter());
+            FilterConfig.RegisterFilters(GlobalFilters.Filters);//
         }
     }
 }

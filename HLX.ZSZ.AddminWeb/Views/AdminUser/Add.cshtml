@@ -44,8 +44,8 @@
     <div class="row cl">
         <label class="form-label col-3"><span class="c-red">*</span>城市：</label>
         <div class="formControls col-5">
-            @Html.DropDownList("cityId", new SelectList(Model.Cities,
-                nameof(CityDTO.Id), nameof(CityDTO.Name)))
+            @*@Html.DropDownList("cityId", new SelectList(Model.Cities, 1)))*@
+            <input id="cityId",type="text",value="1">
         </div>
         <div class="col-4"> </div>
     </div>
@@ -81,7 +81,7 @@
                         alert(res.errorMsg);
                     }
                 },
-                error: function () { alert("请求出错"); }
+                //error: function () { alert("请求出错"); }
             });
         };
         $(function () {

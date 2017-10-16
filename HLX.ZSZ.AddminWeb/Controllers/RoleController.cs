@@ -1,4 +1,5 @@
-﻿using HLX.ZSZ.AdminWeb.Models;
+﻿using HLX.ZSZ.AdminWeb.App_Start;
+using HLX.ZSZ.AdminWeb.Models;
 using HLX.ZSZ.CommonMVC;
 using HLX.ZSZ.IServices;
 using System;
@@ -15,19 +16,20 @@ namespace HLX.ZSZ.AdminWeb.Controllers
         public IRoleService roleService { get; set; }
         public  IPermissionService permisionService { get; set; }
         // GET: Role
+        [CheckPermission("Role.List")]
         public ActionResult List()
         {
             var roles= roleService.GetAll();
             return View(roles);
         }
-
+        [CheckPermission("Role.Delete")]
         public ActionResult Delete(long id)
         {
 
             roleService.MarkDeleted(id);
             return Json(new AjaxResult{ Status = "ok" });
         }
-
+        [CheckPermission("Role.Add")]
         [HttpGet]
         public ActionResult Add() {
             var prem = permisionService.GetAll();//所有可用项
@@ -35,6 +37,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
 
 
         }
+        [CheckPermission("Role.Add")]
         [HttpPost]
         public ActionResult Add(RoleAddModel model)
         {
@@ -49,6 +52,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
 
 
         }
+        [CheckPermission("Role.Edit")]
         [HttpGet]
         public ActionResult Edit(long id) {
           var role=  roleService.GetById(id);
@@ -60,6 +64,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             roleEditGetModel.AllPerms = allPerms;
             return View(roleEditGetModel);
         }
+        [CheckPermission("Role.Edit")]
         [HttpPost]
         public  ActionResult Edit(RoleEditModel model )
         {
@@ -67,7 +72,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             roleService.UpdateRoleIds(model.Id, model.PermissionIds);
             return Json(new AjaxResult { Status = "ok" });
         }
-
+        [CheckPermission("Role.Delete")]
         public ActionResult BatchDelete(long [] selectdIds)
         {
             foreach (var id in selectdIds)
