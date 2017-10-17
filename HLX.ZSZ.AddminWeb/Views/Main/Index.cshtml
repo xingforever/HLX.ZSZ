@@ -1,4 +1,4 @@
-﻿
+﻿@model HLX.ZSZ.DTO.AdminUserDTO
 @{
     Layout = null;
 }
@@ -50,11 +50,11 @@
         <ul class="Hui-userbar">
             <li>超级管理员</li>
             <li class="dropDown dropDown_hover">
-                <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
+                <a href="#" class="dropDown_A">@Model.Name <i class="Hui-iconfont">&#xe6d5;</i></a>
                 <ul class="dropDown-menu radius box-shadow">
                     <li><a href="#">个人信息</a></li>
                     <li><a href="#">切换账户</a></li>
-                    <li><a href="#">退出</a></li>
+                    <li><a href="~/Main/LogOut">退出</a></li>
                 </ul>
             </li>
             <li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -76,19 +76,23 @@
         <input runat="server" id="divScrollValue" type="hidden" value="" />
         <div class="menu_dropdown bk_2">
             <dl id="menu-article">
-                <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dt><i class="Hui-iconfont">&#xe616;</i> 权限管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
                 <dd>
                     <ul>
-                        <li><a _href="article-list.html" href="javascript:void(0)">资讯管理</a></li>
-                    </ul>
+                        <li><a _href="~/Permission/List" href="javascript:void(0)">权限项管理</a></li>
+                        <li><a _href="~/Role/List" href="javascript:void(0)">角色管理</a></li><li><a _href="~/AdminUser/List" href="javascript:void(0)">操作员管理</a></li>
+                    </ul>                  
+                    
                 </dd>
             </dl>
             <dl id="menu-picture">
-                <dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dt><i class="Hui-iconfont">&#xe613;</i> 房源管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
                 <dd>
                     <ul>
-                        <li><a _href="picture-list.html" href="javascript:void(0)">图片管理</a></li>
-                    </ul>
+                        <li><a _href="~/House/List?typeId=12" href="javascript:void(0)">整租管理</a></li>
+                        <li><a _href="~/House/List?typeId=13" href="javascript:void(0)">合租管理</a></li>
+                        <li><a _href="~/HouseAppointment/List" href="javascript:void(0)">预约订单管理</a></li>
+                    </ul>                    
                 </dd>
             </dl>
             <dl id="menu-product">

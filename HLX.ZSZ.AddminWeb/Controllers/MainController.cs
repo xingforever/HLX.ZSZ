@@ -18,8 +18,22 @@ namespace HLX.ZSZ.AdminWeb.Controllers
         // GET: Main
         public ActionResult Index()
         {
-            return View();
+            long? userId = AdminHelper.GetUserId(HttpContext);
+            if (userId==null)
+            {
+                return Redirect("~/Main/Login");
+            }
+            var user = adminService.GetById((long)userId);
+            return View(user);
         }
+
+        public ActionResult LogOut()
+        {
+            Session.Abandon();//销毁Session
+            return Redirect("~/Main/Login");
+        }
+
+
         [HttpGet]
         public ActionResult Login()
         {
