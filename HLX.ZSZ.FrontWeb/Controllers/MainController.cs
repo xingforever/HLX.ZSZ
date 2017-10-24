@@ -14,8 +14,7 @@ namespace HLX.ZSZ.FrontWeb.Controllers
         // GET: Main
         public ActionResult Index()
         {
-            cityService.AddNew("北京");
-            return Content("ok");
+            return View();
         }
     }
 }
