@@ -60,6 +60,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             return Json(new AjaxResult { Status = "ok", Data = communities });
         }
 
+        [ValidateInput(false)]
         [CheckPermission("House.Add")]
         [HttpGet]
         public ActionResult Add()

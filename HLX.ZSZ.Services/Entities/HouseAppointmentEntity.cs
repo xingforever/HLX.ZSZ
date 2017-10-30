@@ -19,5 +19,6 @@ namespace ZSZ.Service.Entities
         public long? FollowAdminUserId { get; set; }
         public virtual AdminUserEntity FollowAdminUser { get; set; }
         public DateTime? FollowDateTime { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

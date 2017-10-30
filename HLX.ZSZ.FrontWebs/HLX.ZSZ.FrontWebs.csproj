@@ -182,12 +182,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ZSZExceptionFilter.cs" />
+    <Compile Include="Controllers\HouseController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="FrontUtils.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MemcacheMgr.cs" />
+    <Compile Include="Models\HouseIndexViewModel.cs" />
+    <Compile Include="Models\HouseMakeAppointmentModel.cs" />
+    <Compile Include="Models\HouseSearchViewModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Models\UserRegModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -209,6 +214,13 @@
     <Content Include="Views\Main\Register.cshtml" />
     <Content Include="Views\Main\Login.cshtml" />
     <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\ForgotPassword2.cshtml" />
+    <Content Include="Views\User\ForgotPassword3.cshtml" />
+    <Content Include="Views\User\ForgotPassword4.cshtml" />
+    <Content Include="Views\House\Index.cshtml" />
+    <Content Include="Views\House\Search.cshtml" />
+    <Content Include="Views\House\Test.cshtml" />
+    <Content Include="Views\House\Search2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\HouseAppointment\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HLX.ZSZ.CommonMVC\HLX.ZSZ.CommonMVC.csproj">

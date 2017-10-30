@@ -22,7 +22,12 @@ namespace HLX.ZSZ.FrontWebs.Controllers
         // GET: Main
         public ActionResult Index()
         {
-            return View();
+            long cityId = FrontUtils.GetCityId(HttpContext);
+            //当前城市的名字
+            string cityName = cityService.GetById(cityId).Name;
+            ViewBag.cityName = cityName;
+            var cities = cityService.GetAll();
+            return View(cities);
         }
         [HttpGet]
         public ActionResult Register() {
