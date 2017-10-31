@@ -120,7 +120,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             dto.TypeId = model.TypeId;
 
             long houseId = houseService.AddNew(dto);
-           // CreateStaticPage(houseId); //生成静态页面           
+            CreateStaticPage(houseId); //生成静态页面           
 
             //生成房源查看的html文件
             return Json(new AjaxResult { Status = "ok" });
@@ -138,7 +138,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
             model.Attachments = attachments;
             string html = MVCHelper.RenderViewToString(this.ControllerContext, @"~/Views/House/StaticIndex.cshtml",
                 model);
-            System.IO.File.WriteAllText(@"E:\快盘\NextBig\NET课程\NET掌上租\上课代码\ZSZ\ZSZ.FrontWeb\" + houseId + ".html", html);
+            System.IO.File.WriteAllText(@"E:\Program\NET高级培训\NET掌上租\项目代码\HLX.ZSZ\HLX.ZSZ.FrontWebs\" + houseId + ".html", html);
         }
 
         [CheckPermission("House.Edit")]
@@ -243,7 +243,7 @@ namespace HLX.ZSZ.AdminWeb.Controllers
 
             houseService.AddNewHousePic(new HousePicDTO { HouseId = houseId, Url = path, ThumbUrl = thumbPath });
 
-          //  CreateStaticPage(houseId);//上传了新图片或者删除图片都要重新生成html页面
+           CreateStaticPage(houseId);//上传了新图片或者删除图片都要重新生成html页面
 
             return Json(new AjaxResult
             {
@@ -259,12 +259,13 @@ namespace HLX.ZSZ.AdminWeb.Controllers
 
         public ActionResult DeletePics(long[] selectedIds)
         {
+          //  long picId = selectedIds.First();
             foreach (var picId in selectedIds)
             {
                 houseService.DeleteHousePic(picId);
             }
 
-            //CreateStaticPage(houseId);//上传了新图片或者删除图片都要重新生成html页面
+        //    CreateStaticPage(houseId);//上传了新图片或者删除图片都要重新生成html页面
             //不建议删除图片
             return Json(new AjaxResult { Status = "ok" });
         }

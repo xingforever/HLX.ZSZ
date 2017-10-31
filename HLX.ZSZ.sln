@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "锁", "锁\锁.csproj", "{A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "静态页面", "静态页面\静态页面.csproj", "{DF0701CB-4924-4EC4-9563-0A020783E532}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "estest1", "estest1\estest1.csproj", "{EA911E2E-4F60-4291-94CC-9EC4FDB6A91D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{DF0701CB-4924-4EC4-9563-0A020783E532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF0701CB-4924-4EC4-9563-0A020783E532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF0701CB-4924-4EC4-9563-0A020783E532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA911E2E-4F60-4291-94CC-9EC4FDB6A91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA911E2E-4F60-4291-94CC-9EC4FDB6A91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA911E2E-4F60-4291-94CC-9EC4FDB6A91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA911E2E-4F60-4291-94CC-9EC4FDB6A91D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{436ED02A-8AD3-4E3D-BAA8-504E86FC478E} = {622ECA69-C8E4-4EBD-A366-349CB2237669}
 		{AFD2B754-3E51-431E-8FBD-41AB67D50D09} = {38EFC7DC-D39B-4BAF-B382-885B820B9272}
 		{DF0701CB-4924-4EC4-9563-0A020783E532} = {38EFC7DC-D39B-4BAF-B382-885B820B9272}
+		{EA911E2E-4F60-4291-94CC-9EC4FDB6A91D} = {38EFC7DC-D39B-4BAF-B382-885B820B9272}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {430F4660-3808-4E07-B9BD-5AC948D67C19}
